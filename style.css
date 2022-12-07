@@ -1,0 +1,507 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "popins", sans-serif;
+}
+
+:root {
+  --text-color: rgb(74, 74, 74);
+  --heading-color: rgb(37, 37, 37);
+  --bgcolor: black;
+}
+
+.dark-theme {
+  --white: white;
+  --bgcolor: white;
+}
+
+p {
+  line-height: 28px;
+  color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+}
+
+.line {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 2px;
+  height: 0;
+  background-color: rgb(24, 23, 23);
+  transition: all 1s ease-in;
+}
+.line.line-transition {
+  top: 0;
+  height: 100vh;
+  opacity: 0;
+}
+
+.wrapper {
+  background-color: rgb(248, 247, 247);
+  padding: 50px 200px 0 200px;
+  position: relative;
+  left: 50%;
+  width: 0;
+  height: auto;
+  overflow: hidden;
+  transition: all 0.6s ease-in, height 0.3s ease-in;
+  transition-delay: 1s;
+  opacity: 0;
+  margin-bottom: 70px;
+}
+.wrapper.DOMContent-loaded {
+  width: 100%;
+  left: 0;
+  opacity: 1;
+}
+.wrapper .name {
+  font-size: 50px;
+}
+.wrapper .intro {
+  max-width: 500px;
+}
+.wrapper .home-page .profile {
+  width: 100%;
+  height: auto;
+  display: flex;
+  background-color: #EB144C;
+  z-index: 1;
+  position: relative;
+  padding: 10px;
+  border-radius: 5px 5px 0 0;
+}
+.wrapper .home-page .profile svg {
+  width: 100%;
+  height: 800px;
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  border-radius: 5px 5px 0 0;
+}
+.wrapper .home-page .profile img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  box-shadow: 6px 13px 36px 1px rgba(17, 16, 17, 0.18);
+}
+.wrapper .home-page .profile .profile-info {
+  padding-left: 30px;
+}
+.wrapper .home-page .profile .profile-info h1 {
+  color: white;
+  font-weight: bold;
+  margin-top: 40px;
+}
+.wrapper .home-page .profile .profile-info p {
+  color: white;
+}
+.wrapper .home-page .profile .profile-info .pdf-button {
+  background-color: white;
+}
+.wrapper .home-page .profile .profile-info .contact-btn {
+  background-color: rgb(230, 62, 230);
+  padding: 4px 10px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+}
+.wrapper .home-page .profile .profile-info .contact-btn i {
+  padding-left: 5px;
+  transition: all 0.3s ease;
+}
+.wrapper .home-page .profile .profile-info .contact-btn:hover {
+  background-color: rgb(233, 9, 233);
+}
+.wrapper .home-page .profile .profile-info .contact-btn:hover i {
+  transform: translate(4px, -4px);
+}
+.wrapper .home-page .profile .profile-info .pdf-button {
+  background-color: white;
+  border: none;
+  padding: 4px 18px;
+  border-radius: 4px;
+}
+.wrapper .home-page .profile .profile-info .pdf-button i {
+  padding-left: 5px;
+  transition: all 0.3s ease;
+}
+.wrapper .home-page .profile .profile-info .pdf-button:hover {
+  background-color: black;
+  color: white;
+}
+.wrapper .home-page .profile .profile-info .pdf-button:hover i {
+  color: white;
+  transform: translateY(7px);
+}
+.wrapper .home-page .profile .profile-info .pdf-all {
+  background-color: white;
+  border: none;
+  padding: 4px 18px;
+  border-radius: 4px;
+}
+.wrapper .home-page .profile .profile-info .pdf-all i {
+  padding-left: 5px;
+  transition: all 0.3s ease;
+}
+.wrapper .home-page .profile .profile-info .pdf-all:hover {
+  background-color: black;
+  color: white;
+}
+.wrapper .home-page .profile .profile-info .pdf-all:hover i {
+  color: white;
+  transform: translateY(7px);
+}
+.wrapper .home-page hr {
+  margin: 70px 0;
+}
+.wrapper .home-page img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-top: 50px;
+}
+.wrapper .home-page .about-me-header {
+  margin-top: 200px;
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.wrapper .home-page .about-me-header:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 100%;
+  height: 3px;
+  background-color: rgb(243, 60, 243);
+}
+.wrapper .home-page .intro {
+  position: relative;
+  padding: 10px;
+}
+.wrapper .home-page .intro:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 94%;
+  background-color: rgb(243, 60, 243);
+}
+.wrapper .home-page .about {
+  margin-top: 50px;
+}
+.wrapper .home-page .my-passion {
+  margin-top: 100px;
+}
+.wrapper .home-page .my-passion h3 {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.wrapper .home-page .my-passion h3:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 100%;
+  height: 3px;
+  background-color: rgb(243, 60, 243);
+}
+.wrapper .home-page .my-passion p {
+  max-width: 500px;
+  position: relative;
+  padding: 10px;
+}
+.wrapper .home-page .my-passion p:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 94%;
+  background-color: rgb(243, 60, 243);
+}
+.wrapper .home-page .what-i-do {
+  width: 100%;
+  height: auto;
+  margin-top: 100px;
+}
+.wrapper .home-page .what-i-do h3 {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.wrapper .home-page .what-i-do h3:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background-color: rgb(243, 60, 243);
+}
+.wrapper .home-page .what-i-do .what-is-it {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+.wrapper .home-page .what-i-do .what-is-it .does {
+  background-color: white;
+  padding: 20px;
+  box-shadow: 6px 13px 26px 1px rgba(17, 17, 26, 0.18);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+.wrapper .home-page .what-i-do .what-is-it .does:hover {
+  transform: translateY(-10px);
+}
+.wrapper .home-page .what-i-do .what-is-it .does h5 {
+  font-weight: bold;
+  margin-top: 28px;
+}
+.wrapper .home-page .what-i-do .what-is-it .does img {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  margin-left: 30%;
+}
+.wrapper .home-page .what-i-do .what-is-it .does i {
+  font-size: 24px;
+  color: rgb(14, 236, 14);
+}
+.wrapper .home-page .my-skills {
+  width: 100%;
+  height: auto;
+  margin-top: 40px;
+}
+.wrapper .home-page .my-skills h3 {
+  margin-top: 10px;
+}
+.wrapper .home-page .my-skills p {
+  margin-top: 10px;
+}
+.wrapper .home-page .my-skills .skill {
+  width: 100%;
+  height: 30px;
+  position: relative;
+  outline: 1px solid rgb(194, 6, 194);
+  margin-top: -16px;
+  border-radius: 2px;
+}
+.wrapper .home-page .my-skills .skill span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0%;
+  background-color: rgb(194, 6, 194);
+  height: 100%;
+  transition: all 1s ease-in-out;
+}
+.wrapper .home-page .my-skills h3 {
+  margin-top: 80px;
+}
+.wrapper .home-page .my-skills h5 {
+  transition: all 0.3s ease-in-out;
+  margin-top: 14px;
+}
+.wrapper .home-page .my-skills h5 i {
+  font-size: 20px;
+  color: rgb(194, 6, 194);
+}
+.wrapper .home-page .my-skills h5:hover {
+  transform: translateX(20px);
+}
+.wrapper .home-page footer {
+  width: 100%;
+  height: 140px;
+  margin-top: 50px;
+  background-color: rgb(80, 19, 80);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+.wrapper .home-page footer .link {
+  font-size: 40px;
+  text-align: center;
+  margin: 0 20px;
+  cursor: pointer;
+}
+.wrapper .home-page footer .link1 {
+  color: rgb(251, 249, 251);
+}
+.wrapper .home-page footer .link1:hover {
+  color: rgb(248, 77, 248);
+}
+.wrapper .home-page footer .link2 {
+  color: rgb(247, 247, 249);
+}
+.wrapper .home-page footer .link2:hover {
+  color: rgb(248, 77, 248);
+}
+.wrapper .home-page footer p {
+  margin-top: 20px;
+  color: #fff;
+}
+.wrapper .home-page footer p i {
+  color: red;
+}
+.wrapper .home-page footer p a {
+  color: #fff;
+}
+.wrapper .home-page nav {
+  width: 30%;
+  height: 50px;
+  background-color: rgb(189, 9, 189);
+  left: 50%;
+  transform: translateX(-50%);
+  position: fixed;
+  bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 11;
+  transition: all 0.4s ease;
+  box-shadow: 2px 10px 60px 7px rgb(101, 28, 127);
+}
+.wrapper .home-page nav i {
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+}
+.wrapper .home-page nav i:hover {
+  background-color: rgb(249, 159, 249);
+  color: rgb(189, 9, 189);
+}
+
+@media screen and (max-width: 1028px) {
+  .wrapper {
+    padding: 10px 10px 0 10px;
+  }
+}
+@media screen and (max-width: 967px) {
+  .wrapper .home-page .profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .wrapper .home-page .profile-info p {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .wrapper .home-page .profile-info a {
+    margin-top: 10px;
+  }
+  .wrapper .home-page .name {
+    font-size: 40px;
+    text-align: center;
+  }
+  .wrapper .home-page a {
+    text-align: center;
+  }
+  .wrapper .home-page .profile {
+    flex-direction: column;
+    align-items: center;
+  }
+  .wrapper .home-page .profile img {
+    width: 240px;
+    height: 240px;
+  }
+  .wrapper .home-page .profile .profile-info h1 {
+    margin-top: 50px;
+  }
+  .wrapper .home-page .about-me {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .wrapper .home-page .about-me .info {
+    width: 100%;
+  }
+  .wrapper .home-page .about-me .experience {
+    width: 100%;
+  }
+  .wrapper .home-page .about-me .experience h3 {
+    margin-top: 50px;
+  }
+  .wrapper .home-page .projects {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  .wrapper .home-page .list-of-projects .explore-project .project-info .kinfe-image {
+    width: 130px;
+    height: 130px;
+  }
+  .wrapper .home-page .list-of-projects .explore-project img {
+    height: 300px;
+    width: 50%;
+    border-radius: 0 5px 5px 0;
+  }
+  .wrapper .home-page nav {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 618px) {
+  .wrapper .home-page .profile {
+    flex-direction: column;
+    align-items: center;
+  }
+  .wrapper .home-page .profile img {
+    width: 240px;
+    height: 240px;
+  }
+  .wrapper .home-page .profile .profile-info h1 {
+    margin-top: 50px;
+  }
+  .wrapper .home-page .about-me {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .wrapper .home-page .about-me .info {
+    width: 100%;
+  }
+  .wrapper .home-page .about-me .experience {
+    width: 100%;
+  }
+  .wrapper .home-page .what-i-do .what-is-it {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media screen and (max-width: 900px) {
+  .wrapper .home-page nav {
+    width: 80%;
+  }
+}/*# sourceMappingURL=style.css.map */

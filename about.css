@@ -1,0 +1,265 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "popins", sans-serif;
+}
+
+:root {
+  --text-color: rgb(74, 74, 74);
+  --heading-color: rgb(37, 37, 37);
+  --bgcolor: black;
+}
+
+.dark-theme {
+  --white: white;
+  --bgcolor: white;
+}
+
+p {
+  line-height: 28px;
+  color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+}
+
+.line {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 2px;
+  height: 0;
+  background-color: rgb(24, 23, 23);
+  transition: all 1s ease-in;
+}
+.line.line-transition {
+  top: 0;
+  height: 100vh;
+  opacity: 0;
+}
+
+.wrapper {
+  background-color: rgb(248, 247, 247);
+  padding: 50px 220px 0 220px;
+  position: relative;
+  left: 50%;
+  width: 0;
+  height: auto;
+  overflow: hidden;
+  transition: all 0.6s ease-in, height 0.3s ease-in;
+  transition-delay: 1s;
+  opacity: 0;
+  margin-bottom: 70px;
+}
+.wrapper.DOMContent-loaded {
+  width: 100%;
+  left: 0;
+  opacity: 1;
+}
+.wrapper .about-me-header {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.wrapper .intro {
+  max-width: 500px;
+}
+.wrapper img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-top: 50px;
+}
+.wrapper .about {
+  margin-top: 50px;
+}
+.wrapper .my-passion {
+  margin-top: 100px;
+}
+.wrapper .what-i-do {
+  width: 100%;
+  height: auto;
+  margin-top: 100px;
+}
+.wrapper .what-i-do .what-is-it {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  border-radius: 10px;
+}
+.wrapper .what-i-do .what-is-it .does {
+  background-color: white;
+  padding: 20px;
+}
+.wrapper .what-i-do .what-is-it .does h5 {
+  font-weight: bold;
+  margin-top: 28px;
+}
+.wrapper .what-i-do .what-is-it .does img {
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+  margin-left: 30%;
+}
+.wrapper .what-i-do .what-is-it .does i {
+  font-size: 24px;
+  color: rgb(14, 236, 14);
+}
+.wrapper .my-skills {
+  width: 100%;
+  height: auto;
+  margin-top: 40px;
+}
+.wrapper .my-skills h3 {
+  margin-top: 10px;
+}
+.wrapper .my-skills p {
+  margin-top: 10px;
+}
+.wrapper .my-skills .skill {
+  width: 100%;
+  height: 30px;
+  position: relative;
+  border: 0.5px solid gray;
+  margin-top: -16px;
+}
+.wrapper .my-skills .skill span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0%;
+  background-color: rgb(194, 6, 194);
+  height: 100%;
+  transition: all 1s ease-in-out;
+}
+.wrapper .my-skills h3 {
+  margin-top: 30px;
+}
+.wrapper .my-skills h5 {
+  transition: all 0.3s ease-in-out;
+  margin-top: 14px;
+}
+.wrapper .my-skills h5 i {
+  font-size: 20px;
+  color: blue;
+}
+.wrapper .my-skills h5:hover {
+  transform: translateX(20px);
+}
+.wrapper footer {
+  width: 100%;
+  height: 140px;
+  margin-top: 50px;
+  background-color: black;
+  border-radius: 0 30px 0 30px;
+  border-radius: 0 30px 0 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+.wrapper footer .link {
+  font-size: 40px;
+  text-align: center;
+  margin: 0 20px;
+  cursor: pointer;
+}
+.wrapper footer .link1 {
+  color: rgb(241, 36, 241);
+}
+.wrapper footer .link1:hover {
+  color: rgb(248, 77, 248);
+}
+.wrapper footer .link2 {
+  color: blue;
+}
+.wrapper footer .link2:hover {
+  color: rgb(54, 54, 229);
+}
+.wrapper footer p {
+  margin-top: 20px;
+  color: rgb(109, 109, 109);
+}
+.wrapper footer p i {
+  color: red;
+}
+.wrapper nav {
+  width: 30%;
+  height: 50px;
+  background-color: rgb(189, 9, 189);
+  left: 50%;
+  transform: translateX(-50%);
+  position: fixed;
+  bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 11;
+  transition: all 0.4s ease;
+}
+.wrapper nav i {
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+}
+.wrapper nav i:hover {
+  background-color: violet;
+  color: rgb(100, 100, 100);
+}
+
+@media screen and (max-width: 1028px) {
+  .wrapper {
+    padding: 50px 20px 0 20px;
+  }
+}
+@media screen and (max-width: 667px) {
+  .wrapper {
+    padding: 50px 20px 0 20px;
+  }
+  .wrapper .what-i-do {
+    width: 100%;
+    height: auto;
+    margin-top: 100px;
+  }
+  .wrapper .what-i-do .what-is-it {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .wrapper .what-i-do .what-is-it .does {
+    background-color: white;
+    padding: 20px;
+  }
+  .wrapper .what-i-do .what-is-it .does i h5 {
+    font-weight: bold;
+    margin-top: 34px;
+  }
+  .wrapper .what-i-do .what-is-it .does img {
+    width: 140px;
+    height: 140px;
+    margin-left: 40%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .wrapper .what-i-do .what-is-it {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .wrapper .what-i-do .what-is-it .does img {
+    margin-left: 30%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .wrapper {
+    padding: 50px 20px 0 20px;
+  }
+  .wrapper nav {
+    width: 80%;
+  }
+}/*# sourceMappingURL=about.css.map */

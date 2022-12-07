@@ -1,0 +1,647 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'popins', sans-serif;
+}
+
+@mixin button {
+    background-color: rgb(230, 62, 230);
+    padding: 4px 10px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+}
+
+:root {
+    --text-color: rgb(74, 74, 74);
+    --heading-color: rgb(37, 37, 37);
+    --bgcolor: black;
+}
+
+.dark-theme {
+    --white: white;
+    --bgcolor: white;
+}
+
+
+p {
+    line-height: 28px;
+    color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+}
+
+
+.line {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 2px;
+    height: 0;
+    background-color: rgb(24, 23, 23);
+    transition: all 1s ease-in;
+
+
+    &.line-transition {
+        top: 0;
+        height: 100vh;
+        opacity: 0;
+    }
+}
+
+.wrapper {
+    background-color: rgb(248, 247, 247);
+    padding: 50px 200px 0 200px;
+    position: relative;
+    left: 50%;
+    width: 0;
+    height: auto;
+    overflow: hidden;
+    transition: all 0.6s ease-in, height 0.3s ease-in;
+    transition-delay: 1s;
+    opacity: 0;
+    margin-bottom: 70px;
+
+    &.DOMContent-loaded {
+        width: 100%;
+        left: 0;
+        opacity: 1;
+    }
+
+    .name {
+        font-size: 50px;
+    }
+
+    .intro {
+        max-width: 500px;
+    }
+
+
+    .home-page {
+
+// !########################### profile
+        .profile {
+            width: 100%;
+            height: auto;
+            display: flex;
+            background-color: #EB144C;
+            z-index: 1;
+            position: relative;
+            padding: 10px;
+            border-radius: 5px 5px 0 0;
+            
+            svg {
+                width: 100%;
+                height: 800px;
+                z-index: -1;
+                position: absolute;
+                left: 0;
+                border-radius: 5px 5px 0 0;
+            }
+    
+            img {
+                width: 220px;
+                height: 220px;
+                border-radius: 50%;
+                object-fit: cover;
+                box-shadow: 6px 13px 36px 1px rgba(17, 16, 17, 0.18);
+            }
+
+            .profile-info {
+                padding-left: 30px;
+
+                h1 {
+                    color: white;
+                    font-weight: bold;
+                    margin-top: 40px;
+                }
+
+                p {
+                    color: white;
+                }
+
+
+                .pdf-button {
+                    background-color: white;
+                }
+                
+            
+
+                .contact-btn {
+                    @include button;
+
+                    i {
+                        padding-left: 5px;
+                        transition: all 0.3s ease;
+                    }
+
+                    &:hover  {
+                        background-color: rgb(233, 9, 233);
+                    }
+
+                    &:hover i {
+                        transform: translate(4px, -4px);
+                    }
+                }
+
+                .pdf-button {
+                    background-color: white;
+                    border: none;
+                    padding: 4px 18px;
+                    border-radius: 4px;
+
+                    i {
+                        padding-left: 5px;
+                        transition: all 0.3s ease;
+                    }
+
+                    &:hover  {
+                        background-color: black;
+                        color: white;
+                    }
+
+                    &:hover i {
+                        color: white;
+                        transform: translateY(7px);
+                    }
+                }
+
+                .pdf-all {
+                    background-color: white;
+                    border: none;
+                    padding: 4px 18px;
+                    border-radius: 4px;
+
+                    i {
+                        padding-left: 5px;
+                        transition: all 0.3s ease;
+                    }
+
+                    &:hover  {
+                        background-color: black;
+                        color: white;
+                    }
+
+                    &:hover i {
+                        color: white;
+                        transform: translateY(7px);
+                    }
+                }
+
+            }
+
+
+// !########################### about me
+
+        }
+        hr {
+            margin: 70px 0;
+        }
+    
+
+         // ! ############################# about image
+    img {
+        width: 100%;
+        object-fit: cover;
+        margin-top: 50px;
+    }
+
+    // ! ####################### about me
+    .about-me-header {
+        margin-top: 200px;
+        position: relative;
+        width: fit-content;
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 100%;
+            height: 3px;
+            background-color: rgb(243, 60, 243);
+        }
+    }
+
+    .intro {
+        position: relative;
+        padding: 10px;
+        &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 3px;
+            height: 94%;
+            background-color: rgb(243, 60, 243);
+        }
+    }
+
+    .about {
+        margin-top: 50px;
+    }
+
+    // ! ####################### my passion
+    .my-passion {
+        margin-top: 100px;
+        
+        h3 {
+            position: relative;
+            width: fit-content;
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: -10px;
+                width: 100%;
+                height: 3px;
+                background-color: rgb(243, 60, 243);
+            }
+        }
+
+        p {
+            max-width: 500px;
+            position: relative;
+            padding: 10px;
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 3px;
+                height: 94%;
+                background-color: rgb(243, 60, 243);
+            }
+        }
+    }
+
+    .what-i-do {
+        width: 100%;
+        height: auto;
+        margin-top: 100px;
+
+        h3 {
+            position: relative;
+            width: fit-content;
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 4px;
+                background-color: rgb(243, 60, 243);
+            }
+        }
+
+        .what-is-it {
+            width: 100%;
+            height: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            border-radius: 10px;
+            margin-top: 40px;
+
+            .does {
+                background-color: white;
+                padding: 20px;
+                box-shadow: 6px 13px 26px 1px rgba(17, 17, 26, 0.18);
+                border-radius: 6px;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    transform: translateY(-10px);
+                }
+
+                h5 {
+                    font-weight: bold;
+                    margin-top: 28px;
+                }
+    
+                img {
+                    width: 120px;
+                    height: 120px;
+                    border-radius: 10px;
+                    margin-left: 30%;
+                }
+
+                i {
+                    font-size: 24px;
+                    color: rgb(14, 236, 14);
+                }
+            } 
+        }
+    }
+
+    // ! ########################## my skills
+    .my-skills {
+        width: 100%;
+        height: auto;
+        margin-top: 40px;
+
+        h3 {
+            margin-top: 10px;
+        }
+
+        p {
+            margin-top: 10px;
+        }
+        
+        .skill {
+            width: 100%;
+            height: 30px;
+            position: relative;
+            outline: 1px solid rgb(194, 6, 194);
+            margin-top: -16px;
+            border-radius: 2px;
+
+
+            span {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 0%;
+                background-color: rgb(194, 6, 194);
+                height: 100%;
+                transition: all 1s ease-in-out;
+            }
+            
+        }
+        h3 {
+            margin-top: 80px;
+        }
+        h5 {
+            transition: all 0.3s ease-in-out;
+            margin-top: 14px;
+            i {
+                font-size: 20px;
+                color: rgb(194, 6, 194);
+            }
+            &:hover {
+                transform: translateX(20px);
+            }
+        }
+    }
+        // ! ############################ footer
+        footer {
+            width: 100%;
+            height: 140px;
+            margin-top: 50px;
+            background-color: rgb(80, 19, 80);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0;
+
+            .link {
+                font-size: 40px;
+                text-align: center;
+                margin: 0 20px;
+                cursor: pointer;
+            }
+
+            .link1 {
+                color: rgb(251, 249, 251);
+                &:hover {
+                    color: rgb(248, 77, 248);
+                }
+            }
+            .link2 {
+                color: rgb(247, 247, 249);
+                &:hover {
+                    color: rgb(248, 77, 248);
+                }
+            }
+
+            p {
+                margin-top: 20px;
+                color: #fff;
+
+                i {
+                    color: red;
+                }
+
+                a {
+                    color: #fff;
+                }
+            }
+        }
+
+        // ! ############################ nav bar
+
+        nav {
+            width: 30%;
+            height: 50px;
+            background-color: rgb(189, 9, 189);
+            left: 50%;
+            transform: translateX(-50%);
+            position: fixed;
+            bottom: 10px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            z-index: 11;
+            transition: all 0.4s ease;
+            box-shadow: 2px 10px 60px 7px rgb(101, 28, 127);
+
+            i {
+                font-size: 24px;
+                cursor: pointer;
+                padding: 10px;
+                border-radius: 5px;
+                color: white;
+                
+                &:hover {
+                    background-color: rgb(249, 159, 249);
+                    color:rgb(189, 9, 189);
+                }
+            }
+
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 1028px) {
+    .wrapper {
+        padding: 10px 10px 0 10px;
+    }
+}
+
+@media screen and (max-width: 967px) {
+    .wrapper {
+        .home-page {
+            .profile-info {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                p {
+                    margin-top: 20px;
+                    text-align: center;
+                }
+
+                a {
+                    margin-top: 10px;
+                }
+            }
+            .name {
+                font-size: 40px;
+                text-align: center;
+            }
+
+            a {
+                text-align: center;
+            }
+        }
+    
+    
+        .home-page {
+    
+    // !########################### profile
+            .profile {
+                flex-direction: column;
+                align-items: center;
+        
+                img {
+                    width: 240px;
+                    height: 240px;
+                }
+    
+                .profile-info {    
+                    h1 {
+                        margin-top: 50px;
+                    }
+                }
+    
+    
+    // !########################### about me
+    
+            }
+            .about-me {
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 20px;
+    
+                .info {
+                    width: 100%;
+                }
+    
+                .experience {
+                    width: 100%;
+
+                    h3 {
+                        margin-top: 50px;
+                    }
+                }
+            }
+    
+            // ! ##################################### projects
+            .projects {
+                width: 100%;
+                height: auto;
+                display: flex;
+                justify-content: space-between;
+            }
+    
+            .list-of-projects {
+                .explore-project {
+                    .project-info {
+                        .kinfe-image {
+                            width: 130px;
+                            height: 130px;
+                        }
+                    }
+                    img {
+                        height: 300px;
+                        width: 50%;
+                        border-radius: 0 5px 5px 0;
+                    }
+    
+                }
+            }
+            // ! ############################ nav bar
+    
+            nav {
+                width: 80%;
+            }
+        }
+    }    
+}
+
+@media screen and (max-width: 618px) {
+    .wrapper {
+    
+        .home-page {
+    
+    // !########################### profile
+            .profile {
+                flex-direction: column;
+                align-items: center;
+        
+                img {
+                    width: 240px;
+                    height: 240px;
+                }
+    
+                .profile-info {    
+                    h1 {
+                        margin-top: 50px;
+                    }
+                }
+    
+    
+    // !########################### about me
+    
+            }
+            .about-me {
+                width: 100%;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 20px;
+    
+                .info {
+                    width: 100%;
+                }
+    
+                .experience {
+                    width: 100%;
+                }
+            }
+            .what-i-do {
+                .what-is-it {
+                    grid-template-columns: repeat(1, 1fr);
+                }
+            }
+        }
+    }    
+}
+
+@media screen and (max-width: 900px){
+    .wrapper {
+    
+        .home-page {
+    
+            nav {
+                width: 80%;
+            }
+        }
+    }  
+}

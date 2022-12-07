@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'popins', sans-serif;
+}
+
+@mixin button {
+    background-color: rgb(230, 62, 230);
+    padding: 4px 10px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+}
+
+:root {
+    --text-color: rgb(74, 74, 74);
+    --heading-color: rgb(37, 37, 37);
+    --bgcolor: black;
+}
+
+.dark-theme {
+    --white: white;
+    --bgcolor: white;
+}
+
+
+p {
+    line-height: 28px;
+    color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+}
+
+
+.line {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    width: 2px;
+    height: 0;
+    background-color: rgb(24, 23, 23);
+    transition: all 1s ease-in;
+
+
+    &.line-transition {
+        top: 0;
+        height: 100vh;
+        opacity: 0;
+    }
+}
+
+
+
+.wrapper {
+    background-color: rgb(248, 247, 247);
+    padding: 50px 200px 0 200px;
+    position: relative;
+    left: 50%;
+    width: 0;
+    height: auto;
+    overflow: hidden;
+    transition: all 0.6s ease-in, height 0.3s ease-in;
+    transition-delay: 1s;
+    opacity: 0;
+    margin-bottom: 70px;
+
+    &.DOMContent-loaded {
+        width: 100%;
+        left: 0;
+        opacity: 1;
+    }
+
+    .stages-header {
+        text-transform: uppercase;
+    }
+
+    .bg-svg {
+        width: 100%;
+        height: 70vh;
+        object-fit: contain;
+    }
+
+    .stages {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        margin-top: 140px;
+
+        .stage {
+            width: 100%;
+            background-color: white;
+            padding: 10px;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            box-shadow: 0px 10px 20px 10px rgb(217, 217, 217);
+            transition: all 0.3s ease;
+
+            &:hover {
+                transform: translateY(-10px);
+            }
+
+            h6 {
+                padding: 20px 0;
+                background-color: #eee;
+                width: 100%;
+                text-align: center;
+            }
+
+            i {
+                font-size: 50px;
+                background-color: blueviolet;
+                width: 100%;
+                text-align: center;
+                padding: 20px 0;
+                color: white;
+                margin-top: 0;
+            }
+
+            h4 {
+                margin-top: 10px;
+            }
+
+
+            p {
+                margin: 20px 0 40px 0;
+            }
+
+            a {
+                @include button;
+                text-decoration: none;
+                position: absolute;
+                bottom: 10px;
+                margin-top: 50px;
+
+                &:hover {
+                    background-color: rgb(241, 80, 241);
+                }
+            }
+        }
+    }
+
+   // ! ############################ footer
+   footer {
+    width: 100%;
+    height: 140px;
+    margin-top: 50px;
+    background-color: rgb(80, 19, 80);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+
+    .link {
+        font-size: 40px;
+        text-align: center;
+        margin: 0 20px;
+        cursor: pointer;
+    }
+
+    .link1 {
+        color: rgb(251, 249, 251);
+        &:hover {
+            color: rgb(248, 77, 248);
+        }
+    }
+    .link2 {
+        color: rgb(247, 247, 249);
+        &:hover {
+            color: rgb(248, 77, 248);
+        }
+    }
+
+    p {
+        margin-top: 20px;
+        color: #fff;
+
+        i {
+            color: red;
+        }
+
+        a {
+            color: #fff;
+        }
+    }
+}
+
+// ! ############################ nav bar
+
+nav {
+    width: 30%;
+    height: 50px;
+    background-color: rgb(189, 9, 189);
+    left: 50%;
+    transform: translateX(-50%);
+    position: fixed;
+    bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 11;
+    transition: all 0.4s ease;
+    box-shadow: 2px 10px 60px 7px rgb(101, 28, 127);
+
+    i {
+        font-size: 24px;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 5px;
+        color: white;
+        
+        &:hover {
+            background-color: rgb(249, 159, 249);
+            color:rgb(189, 9, 189);
+        }
+    }
+
+}
+}
+
+
+@media screen and (max-width: 1148px){
+    .wrapper {
+        padding: 50px 20px 0 20px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .wrapper {
+        padding: 50px 20px 0 20px;
+
+        .bg-svg {
+            width: 100%;
+            height: 50vh;
+            object-fit: contain;
+        }
+    
+        .stages {
+            grid-template-columns: repeat(1, 1fr);
+            margin-top: 80px;
+        }
+    }
+}
+
+@media screen and (max-width: 900px){
+    .wrapper {
+        nav {
+            width: 80%;
+        }   
+    }
+}

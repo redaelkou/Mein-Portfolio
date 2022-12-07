@@ -1,0 +1,272 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "popins", sans-serif;
+  background-color: #eee;
+}
+
+:root {
+  --text-color: rgb(74, 74, 74);
+  --heading-color: rgb(37, 37, 37);
+  --bgcolor: black;
+}
+
+.dark-theme {
+  --white: white;
+  --bgcolor: white;
+}
+
+p {
+  line-height: 28px;
+  color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+}
+
+.line {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 2px;
+  height: 0;
+  background-color: rgb(24, 23, 23);
+  transition: all 1s ease-in;
+}
+.line.line-transition {
+  top: 0;
+  height: 100vh;
+  opacity: 0;
+}
+
+.wrapper {
+  background-color: rgb(248, 247, 247);
+  padding: 50px 220px 0 220px;
+  position: relative;
+  left: 50%;
+  width: 0;
+  height: auto;
+  overflow: hidden;
+  transition: all 0.6s ease-in, height 0.3s ease-in;
+  transition-delay: 1s;
+  opacity: 0;
+  margin-bottom: 70px;
+}
+.wrapper.DOMContent-loaded {
+  width: 100%;
+  left: 0;
+  opacity: 1;
+}
+.wrapper h1 {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.wrapper .contact-bg-image {
+  width: 100%;
+  height: 70vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-top: 50px;
+  border-radius: 10px;
+  margin: 100px 0;
+  background-position: center center;
+}
+.wrapper .contact-me {
+  width: 100%;
+  height: auto;
+  background: white;
+  padding-bottom: 20px;
+}
+.wrapper .contact-me .contact-us-header {
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  font-weight: 800;
+  text-transform: uppercase;
+  background-color: rgb(223, 53, 223);
+  color: white;
+}
+.wrapper .contact-me form {
+  width: 100%;
+  height: 100%;
+  padding: 0 10px;
+}
+.wrapper .contact-me form label {
+  color: var(--text-color);
+  font-weight: 600;
+  margin-top: 30px;
+}
+.wrapper .contact-me form input:not([type=submit]) {
+  width: 100%;
+  height: 40px;
+  padding-left: 6px;
+  border-radius: 2px;
+  border: 1px solid black;
+  outline: none;
+  border: 0.5px solid rgb(178, 178, 178);
+  background-color: #eee;
+}
+.wrapper .contact-me form input[type=submit] {
+  background-color: rgb(230, 62, 230);
+  padding: 4px 10px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  margin-top: 20px;
+  width: 160px;
+  height: 40px;
+  font-weight: bold;
+}
+.wrapper .contact-me form input[type=submit]:hover {
+  background-color: rgb(245, 54, 245);
+}
+.wrapper .contact-me form textarea {
+  width: 100%;
+  height: 100px;
+  margin-top: 30px;
+  padding: 10px;
+  border: 1px solid black;
+  outline: none;
+  border: 0.5px solid rgb(178, 178, 178);
+  background-color: #eee;
+}
+.wrapper .contact-me .contact-hr {
+  margin-top: 80px;
+}
+.wrapper .contact-me iframe {
+  width: 100%;
+  height: 74vh;
+  margin-top: 70px;
+  border-radius: 4px;
+  box-shadow: 6px 13px 26px 1px rgba(17, 17, 26, 0.18);
+}
+.wrapper .contact-me h3 {
+  margin-top: 50px;
+}
+.wrapper .contact-me .sub-contact-info {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 0 10px;
+}
+.wrapper .contact-me .sub-contact-info .reach-me {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px;
+  box-shadow: 6px 13px 36px 10px rgba(17, 17, 26, 0.18);
+  transition: all 0.3s ease;
+}
+.wrapper .contact-me .sub-contact-info .reach-me:hover {
+  transform: translateY(-10px);
+}
+.wrapper .contact-me .sub-contact-info .reach-me i {
+  font-size: 50px;
+  margin-top: 20px;
+  color: rgb(85, 2, 96);
+}
+.wrapper .contact-me .sub-contact-info .reach-me a {
+  color: var(--text-color);
+  margin-top: 20px;
+}
+.wrapper .contact-me .sub-contact-info .reach-me p {
+  text-align: center;
+}
+.wrapper footer {
+  width: 100%;
+  height: 140px;
+  margin-top: 50px;
+  background-color: rgb(80, 19, 80);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+.wrapper footer .link {
+  font-size: 40px;
+  text-align: center;
+  margin: 0 10px;
+  cursor: pointer;
+}
+.wrapper footer .link1 {
+  color: rgb(251, 249, 251);
+}
+.wrapper footer .link1:hover {
+  color: rgb(248, 77, 248);
+}
+.wrapper footer .link2 {
+  color: rgb(247, 247, 249);
+}
+.wrapper footer .link2:hover {
+  color: rgb(248, 77, 248);
+}
+.wrapper footer p {
+  margin-top: 20px;
+  color: #fff;
+}
+.wrapper footer p i {
+  color: red;
+}
+.wrapper footer p a {
+  color: #fff;
+}
+.wrapper nav {
+  width: 30%;
+  height: 50px;
+  background-color: rgb(189, 9, 189);
+  left: 50%;
+  transform: translateX(-50%);
+  position: fixed;
+  bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 11;
+  transition: all 0.4s ease;
+  box-shadow: 2px 10px 60px 7px rgb(101, 28, 127);
+}
+.wrapper nav i {
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+}
+.wrapper nav i:hover {
+  background-color: rgb(249, 159, 249);
+  color: rgb(189, 9, 189);
+}
+
+@media screen and (max-width: 1018px) {
+  .wrapper {
+    padding: 50px 20px 0 20px;
+  }
+}
+@media screen and (max-width: 718px) {
+  .wrapper nav {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 718px) {
+  .wrapper .contact-me {
+    padding: 10px;
+  }
+  .wrapper .contact-me .sub-contact-info {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media screen and (max-width: 900px) {
+  .wrapper nav {
+    width: 80%;
+  }
+}/*# sourceMappingURL=contact.css.map */
