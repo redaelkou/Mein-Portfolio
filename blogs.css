@@ -132,16 +132,40 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
 }
 .wrapper .image_silder .nav .btn {
-  padding: 6px;
+  padding: 10px;
   border-radius: 50%;
   background-color: #fff;
   margin: 6px 0px;
   cursor: pointer;
-  outline: 1px solid rgb(109, 109, 109);
+  border: none;
+  outline: none;
 }
 .wrapper .image_silder .nav .btn.active {
   transform: scale(1.3);
-  background-color: rgb(51, 159, 231);
+  background-color: rgb(245, 3, 245);
+}
+.wrapper .videos {
+  margin-top: 70px;
+  gap: 40px;
+  display: flex;
+}
+.wrapper .videos video {
+  width: 400px;
+  height: 300px;
+  box-shadow: 0 0 10px rgb(218, 217, 217);
+  background-color: #fff;
+}
+.wrapper .single-video {
+  margin-top: 70px;
+  width: 100%;
+}
+@media only screen and (max-width: 500px) {
+  .wrapper .videos {
+    flex-direction: column;
+  }
+  .wrapper .videos video {
+    width: 100%;
+  }
 }
 .wrapper .arrows {
   width: 100%;

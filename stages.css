@@ -131,6 +131,9 @@ h1, h2, h3 {
 .wrapper .stages .stage a:hover {
   background-color: rgb(241, 80, 241);
 }
+.wrapper .stages .stage a::first-letter {
+  text-transform: uppercase;
+}
 .wrapper footer {
   width: 100%;
   height: 140px;
